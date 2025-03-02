@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Search Tool</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <h1>PDF Search Tool</h1>
+    </header>
+
+    <form id="searchForm">
+        <label for="folderInput">Select Folder:</label>
+        <input type="file" id="folderInput" webkitdirectory directory multiple required>
+
+        <label for="searchString">Search String:</label>
+        <input type="text" id="searchString" required placeholder="Enter search string here...">
+
+        <input type="submit" value="Search">
+    </form>
+
+    <h2 style="text-align: center;" id="resultHeader" style="display:none;">Search Results:</h2>
+    <table id="resultsTable" style="display:none;">
+        <tr>
+            <th>File Name</th>
+            <th>Matching Line</th>
+        </tr>
+    </table>
+    <div class="message" id="noResultsMessage" style="display:none;">No results found for your search.</div>
+
+    <!-- Load PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
